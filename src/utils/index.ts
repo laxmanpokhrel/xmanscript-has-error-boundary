@@ -13,5 +13,5 @@ export default function getFileNameAndLocation(errorInfo: any): string[] {
     }
   }
 
-  return [fileName, errorLocation];
+  return [fileName.split(' ')[1] || '', errorLocation];
 }

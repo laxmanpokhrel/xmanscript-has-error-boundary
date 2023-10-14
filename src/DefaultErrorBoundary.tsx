@@ -64,7 +64,7 @@ class DefaultErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                   priority_high
                 </i>
                 <a href={errorLocation} target="_blank" rel="noopener noreferrer" style={{ color: 'blue' }}>
-                  {fileName.split(' ')[1]} &rarr;
+                  {fileName} &rarr;
                 </a>
               </div>
             </p>
