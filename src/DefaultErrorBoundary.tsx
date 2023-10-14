@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Component, ReactNode } from 'react';
 import errorBoundaryContext from './context/errorBoundaryContext';
 import { ContextValueType } from './@types';
+import getFileNameAndLocation from './utils';
 
 interface ErrorBoundaryProps {
   showError?: boolean;
@@ -32,7 +33,7 @@ class DefaultErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   }
 
   render() {
-    const [fileName, errorLocation] = (this.state.errorInfo as any).componentStack.split('\n ')[1].trim().split(' (');
+    const [fileName, errorLocation] = getFileNameAndLocation(this.state.errorInfo);
     if (this.state.errorInfo) {
       const contextProps = this.context as ContextValueType;
 
