@@ -59,7 +59,7 @@ class DefaultErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <p style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
-              {fileName}
+              Error:: {fileName}
               <a href={errorLocation} target="_blank" rel="noopener noreferrer">
                 <i className="material-symbols-outlined">open_in_new</i>
               </a>
