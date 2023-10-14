@@ -1,6 +1,6 @@
 {
   "name": "@xmanscript/has-error-boundary",
-  "version": "1.0.0-semantically-released",
+  "version": "1.1.0-semantically-released",
   "description": "Heigher order function to catch errors in component level and prevent app crash",
   "repository": {
     "type": "git",
