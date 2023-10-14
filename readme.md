@@ -66,8 +66,7 @@ function Test() {
 
   return (
     <>
-      <h1>Vite + React</h1>
-      div className="card">
+      <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count} {c}
         </button>
@@ -86,5 +85,31 @@ export default hasErrorBoundary(Test);
 
 ```
 
-Now, any errors that occur within this component will be caught at the component level, preventing them from crashing your entire app.
+An additional feature is that you can create a custom error component to display error messages in your own way. To do this, wrap your app with ErrorBoundaryProvider, as shown below:
 
+```tsx
+import { ErrorBoundaryProvider } from "@xmanscript/has-error-boundary";
+import { App } from "./App"; // Replace with your app import
+
+<ErrorBoundaryProvider
+  errorComponent={(params) => {
+    return (
+      <div>
+        <p>{params?.errorLocation}</p>
+        <p>{params?.fileName}</p>
+        <p>{params?.errorMessage}</p>
+      </div>
+    );
+  }}
+>
+  <App/>
+</ErrorBoundaryProvider>
+
+```
+
+The errorComponent provided will be rendered whenever there is an error in your components wrapped by hasErrorBoundary.
+
+The default error component looks like this:
+![default error component](./src/assets/img/default_error_component.png "")
+
+Happy Coding 🚀.
