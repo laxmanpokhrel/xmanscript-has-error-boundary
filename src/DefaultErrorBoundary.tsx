@@ -32,21 +32,38 @@ class DefaultErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   }
 
   render() {
+    const [fileName, errorLocation] = (this.state.errorInfo as any).componentStack.split('\n ')[1].trim().split(' (');
     if (this.state.errorInfo) {
       const contextProps = this.context as ContextValueType;
 
       if (contextProps?.errorComponent) {
         return contextProps.errorComponent({
-          fileName: 'Your default file name',
-          errorLocation: 'Your default error location',
+          fileName,
+          errorLocation,
+          errorMessage: this.state.error?.message,
         });
       }
 
       return (
-        <div>
-          <div>
-            <i className="material-symbols-outlined">running_with_errors</i>
-            <p> An Error Occurred !</p>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'start',
+            padding: '.5rem',
+            flexDirection: 'column',
+            gap: '.3rem',
+            width: 'full',
+            height: 'full',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <p style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+              {fileName}
+              <a href={errorLocation} target="_blank" rel="noopener noreferrer">
+                <i className="material-symbols-outlined">open_in_new</i>
+              </a>
+              : <div style={{ display: 'flex' }}>{this.state.error?.message}</div>
+            </p>
           </div>
         </div>
       );
