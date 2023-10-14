@@ -51,20 +51,33 @@ class DefaultErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             display: 'flex',
             alignItems: 'start',
             padding: '.5rem',
-            flexDirection: 'column',
             gap: '.3rem',
             width: 'full',
             height: 'full',
+            background: '#ffe6e6',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'start', gap: '.2rem' }}>
             <p style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
-              {fileName}
-              <a href={errorLocation} target="_blank" rel="noopener noreferrer">
-                <i className="material-symbols-outlined">open_in_new</i>
-              </a>
-              : <div style={{ display: 'flex' }}>{this.state.error?.message}</div>
+              <div style={{ display: 'flex', gap: '.1rem', alignItems: 'center' }}>
+                <i className="material-symbols-outlined" style={{ fontSize: '1.2rem', color: '#ff1a1a' }}>
+                  priority_high
+                </i>
+                <a href={errorLocation} target="_blank" rel="noopener noreferrer" style={{ color: 'blue' }}>
+                  {fileName.split(' ')[1]} &rarr;
+                </a>
+              </div>
             </p>
+            <div
+              style={{
+                display: 'flex',
+                background: '#f0f0f5',
+                paddingBlock: '2px',
+                paddingInline: '8px',
+              }}
+            >
+              {this.state.error?.message}
+            </div>
           </div>
         </div>
       );
