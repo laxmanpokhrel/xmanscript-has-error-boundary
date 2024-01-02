@@ -5,7 +5,7 @@ import ErrorContext from './errorBoundaryContext';
 import { ContextValueType, ErrorComponentType } from '../@types';
 
 type HasErrorBoundaryPropsType = {
-  errorComponent: ErrorComponentType;
+  errorComponent?: ErrorComponentType;
   children: React.ReactNode;
 };
 const ErrorBoundaryProvider = ({ errorComponent, children }: HasErrorBoundaryPropsType) => {
