@@ -108,6 +108,9 @@ import { App } from "./App"; // Replace with your app import
 
 The errorComponent provided will be rendered whenever there is an error in your components wrapped by hasErrorBoundary.
 
+
+
+
 The default error component looks like this:
 ![default error component](./src/assets/img/default_error_component.png "")
 
