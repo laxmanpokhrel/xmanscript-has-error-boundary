@@ -4,3 +4,5 @@ export type ErrorComponentProps = { fileName: string; errorLocation: string; err
 export type ErrorComponentType = (props: ErrorComponentProps) => JSX.Element;
 
 export type ContextValueType = { errorComponent?: ErrorComponentType };
+
+export type GoodComponent<T> = (props: React.PropsWithChildren<T>) => React.JSX.Element;
