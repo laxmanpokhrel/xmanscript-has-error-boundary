@@ -1,8 +1,5 @@
 import React from 'react';
-import ErrorBoundary from './DefaultErrorBoundary';
 import ErrorBoundaryProvider from './context/ErrorBoundaryProvider';
-import { GoodComponent } from './@types';
-
 /**
  * This is a higher-order function that wraps a React component with an error boundary.
  * @param WrappedComponent - a React component that will be wrapped with an error boundary.
@@ -11,17 +8,5 @@ import { GoodComponent } from './@types';
  * actual higher-order component that takes in `props` and returns the `ErrorBoundary` component with
  * the `WrappedComponent` passed as a child with the `props` spread into it.
  */
-
-function hasErrorBoundary<T>(
-  WrappedComponent: React.ComponentType<React.PropsWithChildren<React.PropsWithChildren<T>>>
-): GoodComponent<T> {
-  return function ErrorBoundaryWrapper(props: React.PropsWithChildren<T>) {
-    return (
-      <ErrorBoundary>
-        <WrappedComponent {...props} />
-      </ErrorBoundary>
-    );
-  };
-}
-
+declare function hasErrorBoundary<T>(WrappedComponent: React.ComponentType<React.PropsWithChildren<React.PropsWithChildren<T>>>): (props: React.PropsWithChildren<T>) => React.JSX.Element;
 export { hasErrorBoundary, ErrorBoundaryProvider };
