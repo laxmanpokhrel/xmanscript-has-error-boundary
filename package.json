@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/laxmanpokhrel/xmanscript-has-error-boundary.git"
   },
+  "type": "module",
   "keywords": [],
   "exports": {
     "./setValueOfKeyForMatchingValuesOfAKey": "./src/utils/setValueOfKeyForMatchingValuesOfAKey"

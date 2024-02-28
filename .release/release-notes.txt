@@ -1,5 +1,2 @@
 # Changes
-- Semantic release removes
-- Cleanup dev dependencies
-- npm ignore
-- workflow changes
+- prerelease for type module 
