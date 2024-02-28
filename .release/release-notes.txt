@@ -1,3 +1,4 @@
 # Changes
 - prerelease for type module 
-- npm ignore fix 
+- npm ignore fix
+- ready for stable release
