@@ -1,7 +1,5 @@
 # Ignore source files
 src/
-*.js
-*.ts
 
 # Ignore development tools and configuration files
 node_modules/
