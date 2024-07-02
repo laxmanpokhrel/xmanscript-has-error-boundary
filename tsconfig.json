@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "CommonJS",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "declaration": true,
     "sourceMap": true,
     "outDir": "./lib",
     "strict": true,
     "lib": ["ES2020", "DOM"],
     "removeComments": false,
-    "jsx": "react", // Make sure this option is set to "react"
+    "jsx": "react",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -18,8 +19,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true // You can set this to true
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*.ts", "src/**/*.tsx"] // Update the path to include .tsx files
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
