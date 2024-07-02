@@ -1,2 +1,2 @@
 # Changes
-- missing "." exports in package.json
+- configuration enhanced
