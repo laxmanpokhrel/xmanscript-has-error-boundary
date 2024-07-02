@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/laxmanpokhrel/xmanscript-has-error-boundary#readme",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+
   "scripts": {
     "build": "rm -rf lib && tsc",
     "prepare": "husky install",

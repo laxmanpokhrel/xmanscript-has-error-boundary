@@ -1,4 +1,2 @@
 # Changes
-- prerelease for type module 
-- npm ignore fix
-- ready for stable release
+- ptsconfig remove from npmignore
