@@ -8,16 +8,12 @@
   },
   "type": "module",
   "keywords": [],
-  "exports": {
-    "./setValueOfKeyForMatchingValuesOfAKey": "./src/utils/setValueOfKeyForMatchingValuesOfAKey"
-  },
   "bugs": {
     "url": "https://github.com/laxmanpokhrel/xmanscript-has-error-boundary/issues"
   },
   "homepage": "https://github.com/laxmanpokhrel/xmanscript-has-error-boundary#readme",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-
   "scripts": {
     "build": "rm -rf lib && tsc",
     "prepare": "husky install",
@@ -25,6 +21,12 @@
     "lint:fix": "eslint --fix .",
     "commit": "cz",
     "semantic-release": "semantic-release"
+  },
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.js"
+    }
   },
   "author": "Laxman Pokhrel",
   "license": "MIT",

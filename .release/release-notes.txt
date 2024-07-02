@@ -1,2 +1,2 @@
 # Changes
-- ptsconfig remove from npmignore
+- missing "." exports in package.json
